@@ -1,10 +1,11 @@
-const Students = require('../schema/student');
+import Students from '../schema/student';
+
 // const faculty = require('../schema/faculty');
 // const courses = require('../schema/courses');
 // const departments = require('../schema/departments');
 // const library = require('../schema/library');
 
-const url = require('url');
+import url from 'url';
 // const { json } = require('stream/consumers');
 
 async function student_route(req, res) {

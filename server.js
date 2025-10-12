@@ -1,29 +1,35 @@
-const mongoose = require('mongoose');
-const http =require('http');
-const url =require('url');
+import http from 'http';
+import 'dotenv/config';
+import url from 'url';
+import { CourseLogic ,StudentLogic, TestClass } from "../Problem-sheet-3/controller/logic.js"
+import { asyncHandler } from './Utils/async_handler.js';
+import { connectDB } from './DB/mongodb.js';
 
-const student_route =require('./routes/student')
-const port=3000
+await connectDB();
 
-async function mong_connect() {
-    let connect =  await mongoose.connect("mongodb://localhost:27017/BMCCA");
-    if (connect) {
-        console.log("MongoDB connect successfully");        
-    }else{
-        console.log("MongoDB connectiom fail"); 
+
+
+const server = http.createServer(async (req, res) => {
+    const parseUrl = url.parse(req.url);
+    const path = parseUrl.pathname;
+
+    console.log(`current path : - ${path}`);
+
+    res.setHeader("Content-Type", "application/json");
+
+    if (path == "/") {
+        await TestClass.homeRoute(req, res);
+    }else if(path == "/data"){
+        asyncHandler(StudentLogic.insertStudent(req,res));
+    }else if(path == "/course"){
+        asyncHandler(CourseLogic.insertCourse(req,res));
     }
-}
-mong_connect()
+});
 
-http.createServer((req,res)=>{
-    const path=url.parse(req.url,true).pathname;
-    const query=url.parse(req.url,true).query;
 
-    if (path==="/api" && req.method ==='GET') {
-        res.end("this is home page")
-    } else if (path.startsWith('/api/students')) {
-        student_route(req,res)
-    }
-}).listen(port , ()=>{
-    console.log(`your server is running in https://localhost:${port}`);
+
+
+const port = process.env.PORT;
+server.listen(port, () => {
+    console.log(`server listen port number : - ${port}`)
 })
