@@ -1,0 +1,14 @@
+//student
+● Find all students who scored more than 75 marks. 
+    /api/students/moremarks?mark=75
+
+● Find students enrolled in the "BCA" course and show only their name and marks. 
+    /api/students/findcourse?course=BCA
+
+● Find all students
+    /api/students/all
+
+● Update a student’s marks or course enrolment. (updated student mark =20 whose course is BCA)
+    /api/students/updateMark?course=BCA&mark=20
+
+//course
