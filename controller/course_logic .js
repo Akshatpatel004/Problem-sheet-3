@@ -1,5 +1,5 @@
 import Course from '../Model/courses.js';
-
+import mongoose from "mongoose";
 
 const CourseLogic = {
     insertCourse: async (req, res) => {
@@ -46,7 +46,7 @@ const CourseLogic = {
             const morecredit=await Course.find({credits : {$gt:cre}});
             res.setHeader("Content-Type", "application/json");
             res.end(JSON.stringify({
-                "message": "students more than "+cre+" marks",
+                "message": "students more than "+cre+" credit",
                 "data :- ":morecredit
             }))
         } catch (error) {
@@ -55,6 +55,61 @@ const CourseLogic = {
             res.end(JSON.stringify({
                 error: error.message
             })); 
+        }
+    },
+
+
+    fetch_all: async (req, res) => {
+        try {                        
+            const fetchall=await  Course.find();
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({
+                "message:- ":"Total Courses .",
+                "data :- ":fetchall
+            }))
+        } catch (error) {
+            console.error('Error:', error);
+            res.statusCode = 400;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.parse({
+                "error": error.message
+            }));
+        }
+    },
+
+
+    duration_sort: async (req, res) => {
+        try {
+            moo
+            const fetchall=await  Course.find().sort({"durationMonths":1});
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({
+                "message:- ":"durationMonths sorted in ascending order",
+                "data :- ":fetchall
+            }))
+        } catch (error) {
+            console.error('Error:', error);
+            res.statusCode = 400;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.parse({
+                "error": error.message
+            }));
+        }
+    },
+
+
+    rename_collection: async (req, res,oldname,newName) => {
+        try {
+            await mongoose.connection.db.renameCollection(oldname,newName)
+            res.setHeader("Content-Type", "application/json");
+            res.end(`Collection name has been changed successfully from ${oldname} to ${newName}`)
+        } catch (error) {
+            console.error('Error:', error);
+            res.statusCode = 400;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.parse({
+                "error": error.message
+            }));
         }
     }
 };
