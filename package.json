@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Akshat Patel",
@@ -12,6 +13,8 @@
   "type": "module",
   "dependencies": {
     "dotenv": "^17.2.3",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^8.19.1",
     "url": "^0.11.4"
   }
 }

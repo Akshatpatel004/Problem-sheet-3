@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const courseschema = new Schema({
-    courseId:{
+    courseid:{
         type: String,
         unique:true,
         required: true
@@ -10,9 +10,9 @@ const courseschema = new Schema({
     courseName:{
         type : String,
         required: [true,"course name is required"],
-        // match: [/^(?=.{0,15}$)(?!.*[_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,"username is invalid , it should contain 0-15 alphanumericletter and be unique"]
+        match: [/^(?=.{8,15}$)(?!.*[_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/,"username is invalid , it should contain 8-15 alphanumericletter and be unique"]
     },
-    credits:{
+    credit:{  // Fixed: Added missing closing brace
         type : Number,
         required: true
     },
