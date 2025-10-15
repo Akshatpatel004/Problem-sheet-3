@@ -21,15 +21,17 @@ const LibraryLogic = {
                     }));
                     return;
                 }
-                const newlibrary = new Library.create({
+                const newlibrary = new Library({
                     bookId: req.body.bookId,
                     title: req.body.title,
                     author: req.body.author,
-                    category: req.body.bookId,
-                    isAvailable: req.body.category,
+                    category: req.body.category,
+                    isAvailable: req.body.isAvailable,
                     issuedTo: req.body.issuedTo,
                     issueDate: req.body.issueDate,
                 });
+
+                const librarySaved = await newlibrary.save();
 
                 // const newlibrary = new Library(req.body);
                 // const librarySaved = await newlibrary.save();
@@ -37,7 +39,7 @@ const LibraryLogic = {
                 res.setHeader("Content-Type", "application/json");
                 res.end(JSON.stringify({
                     message: "library created successfully",
-                    data: newlibrary
+                    data: librarySaved
                 }));
             } catch (error) {
                 res.statusCode = 400;
@@ -72,7 +74,7 @@ const LibraryLogic = {
 
     fetch_all: async (req, res) => {
         try {
-            const find = await isAvailable.find()
+            const find = await Library.find()
             res.statusCode = 201;
             res.setHeader("Content-Type", "application/json");
             res.end(JSON.stringify({
@@ -89,12 +91,12 @@ const LibraryLogic = {
     },
 
 
-    DeleteCollection: async (req, res,col_name) => {
+    DeleteCollection: async (req, res, col_name) => {
         try {
             await mongoose.connection.db.dropCollection(col_name)
             res.statusCode = 201;
             res.setHeader("Content-Type", "application/json");
-            res.end(col_name+" COllection has been drop successfully")
+            res.end(col_name + " COllection has been drop successfully")
         } catch (error) {
             res.statusCode = 400;
             res.setHeader("Content-Type", "application/json");

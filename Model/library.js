@@ -28,7 +28,7 @@ const libraryschema = new Schema({
         type: String,
         required: true
     },
-    issuedTo:{
+    issueDate:{
         type: Date,
         required: true
     }
