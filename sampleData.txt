@@ -1,0 +1,425 @@
+course data
+
+{
+          courseId: "C101",
+          courseName: "Introduction to Programming",
+          credits: 3,
+          durationMonths: 4,
+          department: "Computer Science",
+        },
+        {
+          courseId: "C102",
+          courseName: "Data Structures and Algorithms",
+          credits: 4,
+          durationMonths: 5,
+          department: "Computer Science",
+        },
+        {
+          courseId: "C103",
+          courseName: "Database Management Systems",
+          credits: 3,
+          durationMonths: 4,
+          department: "Information Technology",
+        },
+        {
+          courseId: "C104",
+          courseName: "Operating Systems",
+          credits: 3,
+          durationMonths: 5,
+          department: "Computer Engineering",
+        },
+        {
+          courseId: "C105",
+          courseName: "Computer Networks",
+          credits: 3,
+          durationMonths: 4,
+          department: "Computer Science",
+        },
+        {
+          courseId: "C106",
+          courseName: "Web Development",
+          credits: 4,
+          durationMonths: 6,
+          department: "Computer Science",
+        },
+        {
+          courseId: "C107",
+          courseName: "Artificial Intelligence",
+          credits: 4,
+          durationMonths: 6,
+          department: "AI & ML",
+        },
+        {
+          courseId: "C108",
+          courseName: "Machine Learning",
+          credits: 4,
+          durationMonths: 6,
+          department: "AI & ML",
+        },
+        {
+          courseId: "C109",
+          courseName: "Software Engineering",
+          credits: 3,
+          durationMonths: 5,
+          department: "Information Technology",
+        },
+        {
+          courseId: "C110",
+          courseName: "Cloud Computing",
+          credits: 3,
+          durationMonths: 4,
+          department: "Computer Science",
+        },
+
+
+student data
+
+{
+          studentId: "S101",
+          name: "Akshat Patel",
+          email: "akshat.patel@example.com",
+          marks: 88,
+          courseEnrolled: "Computer Science",
+          admissionDate: new Date("2023-07-01"),
+        },
+        {
+          studentId: "S102",
+          name: "Neha Sharma",
+          email: "neha.sharma@example.com",
+          marks: 92,
+          courseEnrolled: "Information Technology",
+          admissionDate: new Date("2023-07-05"),
+        },
+        {
+          studentId: "S103",
+          name: "Rahul Verma",
+          email: "rahul.verma@example.com",
+          marks: 75,
+          courseEnrolled: "Mechanical Engineering",
+          admissionDate: new Date("2023-08-10"),
+        },
+        {
+          studentId: "S104",
+          name: "Priya Mehta",
+          email: "priya.mehta@example.com",
+          marks: 95,
+          courseEnrolled: "AI & ML",
+          admissionDate: new Date("2023-07-15"),
+        },
+        {
+          studentId: "S105",
+          name: "Rohan Singh",
+          email: "rohan.singh@example.com",
+          marks: 81,
+          courseEnrolled: "Civil Engineering",
+          admissionDate: new Date("2023-08-01"),
+        },
+        {
+          studentId: "S106",
+          name: "Isha Gupta",
+          email: "isha.gupta@example.com",
+          marks: 90,
+          courseEnrolled: "Computer Networks",
+          admissionDate: new Date("2023-07-20"),
+        },
+        {
+          studentId: "S107",
+          name: "Aman Joshi",
+          email: "aman.joshi@example.com",
+          marks: 85,
+          courseEnrolled: "Software Engineering",
+          admissionDate: new Date("2023-07-25"),
+        },
+        {
+          studentId: "S108",
+          name: "Divya Patel",
+          email: "divya.patel@example.com",
+          marks: 93,
+          courseEnrolled: "Full Stack Development",
+          admissionDate: new Date("2023-07-30"),
+        },
+        {
+          studentId: "S109",
+          name: "Harshit Kumar",
+          email: "harshit.kumar@example.com",
+          marks: 78,
+          courseEnrolled: "Cloud Computing",
+          admissionDate: new Date("2023-08-03"),
+        },
+        {
+          studentId: "S110",
+          name: "Sneha Reddy",
+          email: "sneha.reddy@example.com",
+          marks: 89,
+          courseEnrolled: "Data Structures",
+          admissionDate: new Date("2023-08-08"),
+        },
+
+
+
+
+
+faculty data
+
+
+[
+{
+          facultyId: "F101",
+          name: "Dr. Meena Sharma",
+          department: "Computer Science",
+          email: "meena.sharma@college.edu",
+          experienceYears: 10,
+          subjects: ["DBMS", "AI", "Node.js"],
+        },
+        {
+          facultyId: "F102",
+          name: "Prof. Rakesh Patel",
+          department: "Information Technology",
+          email: "rakesh.patel@college.edu",
+          experienceYears: 8,
+          subjects: ["Data Structures", "Web Dev"],
+        },
+        {
+          facultyId: "F103",
+          name: "Dr. Kavita Nair",
+          department: "Electronics",
+          email: "kavita.nair@college.edu",
+          experienceYears: 12,
+          subjects: ["Digital Logic", "Microprocessors"],
+        },
+        {
+          facultyId: "F104",
+          name: "Prof. Amit Joshi",
+          department: "Mechanical Engineering",
+          email: "amit.joshi@college.edu",
+          experienceYears: 9,
+          subjects: ["Thermodynamics", "Fluid Mechanics"],
+        },
+        {
+          facultyId: "F105",
+          name: "Dr. Sneha Gupta",
+          department: "AI & ML",
+          email: "sneha.gupta@college.edu",
+          experienceYears: 7,
+          subjects: ["Machine Learning", "Deep Learning"],
+        },
+        {
+          facultyId: "F106",
+          name: "Prof. Rajesh Singh",
+          department: "Civil Engineering",
+          email: "rajesh.singh@college.edu",
+          experienceYears: 11,
+          subjects: ["Structural Design", "Surveying"],
+        },
+        {
+          facultyId: "F107",
+          name: "Dr. Nidhi Verma",
+          department: "Computer Science",
+          email: "nidhi.verma@college.edu",
+          experienceYears: 6,
+          subjects: ["Operating Systems", "Networking"],
+        },
+        {
+          facultyId: "F108",
+          name: "Prof. Sanjay Kumar",
+          department: "Information Technology",
+          email: "sanjay.kumar@college.edu",
+          experienceYears: 10,
+          subjects: ["Software Engineering", "Cloud Computing"],
+        },
+        {
+          facultyId: "F109",
+          name: "Dr. Arjun Desai",
+          department: "AI & ML",
+          email: "arjun.desai@college.edu",
+          experienceYears: 5,
+          subjects: ["Data Science", "AI Ethics"],
+        },
+        {
+          facultyId: "F110",
+          name: "Prof. Pooja Rani",
+          department: "Computer Applications",
+          email: "pooja.rani@college.edu",
+          experienceYears: 9,
+          subjects: ["C Programming", "Python Basics"],
+        },
+      ];
+
+
+
+department data
+
+
+
+[
+        {
+          deptId: "D101",
+          deptName: "Computer Science",
+          totalFaculty: 15,
+          coursesOffered: ["Web Dev", "AI", "ML", "Cloud Computing"],
+          location: "Building A",
+        },
+        {
+          deptId: "D102",
+          deptName: "Information Technology",
+          totalFaculty: 12,
+          coursesOffered: ["Data Structures", "Networking", "Software Engineering"],
+          location: "Building B",
+        },
+        {
+          deptId: "D103",
+          deptName: "Electronics Engineering",
+          totalFaculty: 10,
+          coursesOffered: ["Digital Logic", "Embedded Systems"],
+          location: "Building C",
+        },
+        {
+          deptId: "D104",
+          deptName: "Mechanical Engineering",
+          totalFaculty: 18,
+          coursesOffered: ["Thermodynamics", "Fluid Mechanics", "Machine Design"],
+          location: "Building D",
+        },
+        {
+          deptId: "D105",
+          deptName: "Civil Engineering",
+          totalFaculty: 14,
+          coursesOffered: ["Surveying", "Structural Design"],
+          location: "Building E",
+        },
+        {
+          deptId: "D106",
+          deptName: "AI & Machine Learning",
+          totalFaculty: 8,
+          coursesOffered: ["AI", "Deep Learning", "Data Science"],
+          location: "Building F",
+        },
+        {
+          deptId: "D107",
+          deptName: "Computer Applications",
+          totalFaculty: 9,
+          coursesOffered: ["C Programming", "Python", "Java"],
+          location: "Building G",
+        },
+        {
+          deptId: "D108",
+          deptName: "Electrical Engineering",
+          totalFaculty: 11,
+          coursesOffered: ["Power Systems", "Control Engineering"],
+          location: "Building H",
+        },
+        {
+          deptId: "D109",
+          deptName: "Management Studies",
+          totalFaculty: 10,
+          coursesOffered: ["Marketing", "Finance", "HR Management"],
+          location: "Building I",
+        },
+        {
+          deptId: "D110",
+          deptName: "Cyber Security",
+          totalFaculty: 7,
+          coursesOffered: ["Network Security", "Ethical Hacking"],
+          location: "Building J",
+        },
+      ];
+
+
+
+
+library data
+
+
+
+[
+        {
+          bookId: "B101",
+          title: "Introduction to Algorithms",
+          author: "Thomas H. Cormen",
+          category: "Computer Science",
+          isAvailable: true,
+          issuedTo: null,
+          issueDate: null,
+        },
+        {
+          bookId: "B102",
+          title: "Database System Concepts",
+          author: "Abraham Silberschatz",
+          category: "Information Technology",
+          isAvailable: false,
+          issuedTo: "S101",
+          issueDate: new Date("2025-09-20"),
+        },
+        {
+          bookId: "B103",
+          title: "Artificial Intelligence: A Modern Approach",
+          author: "Stuart Russell",
+          category: "AI & ML",
+          isAvailable: true,
+          issuedTo: null,
+          issueDate: null,
+        },
+        {
+          bookId: "B104",
+          title: "Operating System Concepts",
+          author: "Abraham Silberschatz",
+          category: "Computer Engineering",
+          isAvailable: false,
+          issuedTo: "S108",
+          issueDate: new Date("2025-09-25"),
+        },
+        {
+          bookId: "B105",
+          title: "Clean Code",
+          author: "Robert C. Martin",
+          category: "Software Engineering",
+          isAvailable: true,
+          issuedTo: null,
+          issueDate: null,
+        },
+        {
+          bookId: "B106",
+          title: "Introduction to Programming",
+          author: "Andrew S. Tanenbaum",
+          category: "Computer Science",
+          isAvailable: false,
+          issuedTo: "S103",
+          issueDate: new Date("2025-09-15"),
+        },
+        {
+          bookId: "B107",
+          title: "Data Structures and Algorithms",
+          author: "Eric Matthes",
+          category: "Computer Science",
+          isAvailable: true,
+          issuedTo: null,
+          issueDate: null,
+        },
+        {
+          bookId: "B108",
+          title: "Machine Learning Yearning",
+          author: "Andrew Ng",
+          category: "AI & ML",
+          isAvailable: false,
+          issuedTo: "S105",
+          issueDate: new Date("2025-09-18"),
+        },
+        {
+          bookId: "B109",
+          title: "Cloud Computing Basics",
+          author: "Thomas Erl",
+          category: "Cloud Computing",
+          isAvailable: true,
+          issuedTo: null,
+          issueDate: null,
+        },
+        {
+          bookId: "B110",
+          title: "The Pragmatic Programmer",
+          author: "Andrew Hunt",
+          category: "Software Development",
+          isAvailable: true,
+          issuedTo: null,
+          issueDate: null,
+        },
+      ];
