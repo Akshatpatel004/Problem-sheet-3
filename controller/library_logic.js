@@ -12,8 +12,11 @@ const LibraryLogic = {
 
         req.on("end", async () => {
             try {
-                // const req.body = JSON.parse(body);
-                if (!req.body.bookId || !req.body.title || !req.body.author || !req.body.category || !req.body.isAvailable || !req.body.issuedTo || !req.body.issueDate) {
+                const parseData = JSON.parse(body);
+
+                if (!parseData.bookId || !parseData.title || !parseData.author ||
+                    !parseData.category || !parseData.isAvailable || !parseData.issuedTo ||
+                    !parseData.issueDate) {
                     res.statusCode = 400;
                     res.setHeader("Content-Type", "application/json");
                     res.end(JSON.stringify({
@@ -22,13 +25,13 @@ const LibraryLogic = {
                     return;
                 }
                 const newlibrary = new Library({
-                    bookId: req.body.bookId,
-                    title: req.body.title,
-                    author: req.body.author,
-                    category: req.body.category,
-                    isAvailable: req.body.isAvailable,
-                    issuedTo: req.body.issuedTo,
-                    issueDate: req.body.issueDate,
+                    bookId: parseData.bookId,
+                    title: parseData.title,
+                    author: parseData.author,
+                    category: parseData.category,
+                    isAvailable: parseData.isAvailable,
+                    issuedTo: parseData.issuedTo,
+                    issueDate: parseData.issueDate,
                 });
 
                 const librarySaved = await newlibrary.save();
