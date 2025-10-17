@@ -36,8 +36,7 @@ const LibraryLogic = {
 
                 const librarySaved = await newlibrary.save();
 
-                // const newlibrary = new Library(req.body);
-                // const librarySaved = await newlibrary.save();
+         
                 res.statusCode = 201;
                 res.setHeader("Content-Type", "application/json");
                 res.end(JSON.stringify({
