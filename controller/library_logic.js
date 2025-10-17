@@ -20,7 +20,16 @@ const LibraryLogic = {
                     res.statusCode = 400;
                     res.setHeader("Content-Type", "application/json");
                     res.end(JSON.stringify({
-                        "error": "missing key value"
+                        "error": "missing key value",
+                        "missing": Object.keys({
+                            bookId: parseData.bookId,
+                            title: parseData.title,
+                            author: parseData.author,
+                            category: parseData.category,
+                            isAvailable: parseData.isAvailable,
+                            issuedTo: parseData.issuedTo,
+                            issueDate: parseData.issueDate,
+                        }).filter(key => !parseData[key])
                     }));
                     return;
                 }
@@ -36,7 +45,7 @@ const LibraryLogic = {
 
                 const librarySaved = await newlibrary.save();
 
-         
+
                 res.statusCode = 201;
                 res.setHeader("Content-Type", "application/json");
                 res.end(JSON.stringify({
