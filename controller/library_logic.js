@@ -66,8 +66,7 @@ const LibraryLogic = {
 
     FindCategory: async (req, res, cat) => {
         try {
-            const isAvailable = await Library.find({ isAvailable: true })
-            const find = await isAvailable.find({ category: cat })
+            const find = await Library.find({ category: cat, isAvailable: true });
             res.statusCode = 201;
             res.setHeader("Content-Type", "application/json");
             res.end(JSON.stringify({
@@ -102,12 +101,14 @@ const LibraryLogic = {
     },
 
 
-    DeleteCollection: async (req, res, col_name) => {
+    DeleteCollection: async (req, res) => {
         try {
-            await mongoose.connection.db.dropCollection(col_name)
+            const newlibrary = await Library.deleteMany({ issueDate: { $lt: new Date('2025-01-01') } });
             res.statusCode = 201;
             res.setHeader("Content-Type", "application/json");
-            res.end(col_name + " COllection has been drop successfully")
+            res.end(JSON.stringify({
+                data: newlibrary
+            }));
         } catch (error) {
             res.statusCode = 400;
             res.setHeader("Content-Type", "application/json");
@@ -115,6 +116,28 @@ const LibraryLogic = {
                 error: error.message
             }));
         }
+    },
+
+    issuebook: async (req, res) => {
+        try {
+            const find = await Library.find().sort({ issueDate: -1 }).limit(3)
+            res.statusCode = 201;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({
+                data: find
+            }));
+        } catch (error) {
+            res.statusCode = 400;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({
+                error: error.message
+            }));
+        }
+    },
+
+    drop: async (req, res) => {
+        mongoose.connection.db.dropCollection("libraries")
+        res.end("drop successfully")
     }
 }
 
