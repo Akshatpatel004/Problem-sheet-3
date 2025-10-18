@@ -26,19 +26,19 @@ const server = http.createServer(async (req, res) => {
         asyncTryCatch(StudentLogic.fetch_all(req,res));
     }else if(path == "/api/students/insert" && req.method==="POST"){
         asyncTryCatch(StudentLogic.insertStudent(req,res));
-    }else if(path === "/api/students/findcourse" && req.method==="POST"){
+    }else if(path === "/api/students/findcourse" && req.method==="GET"){
         if (querry.course) {
             asyncTryCatch(StudentLogic.student_findcourse(req,res,querry.course));
         } else {
             return
         }
-    }else if(path === "/api/students/moremarks" && req.method==="POST"){
+    }else if(path === "/api/students/moremarks" && req.method==="GET"){
         if (querry.mark) {
             asyncTryCatch(StudentLogic.more_marks(req,res,querry.mark));
         } else {
             return
         }
-    }else if(path === "/api/students/updateMark" && req.method==="POST"){
+    }else if(path === "/api/students/updateMark" && req.method==="PUT"){
         if (querry.course && querry.mark) {
             asyncTryCatch(StudentLogic.update_allStudentMark(req,res,querry.course, querry.mark));
         } else {
@@ -50,7 +50,7 @@ const server = http.createServer(async (req, res) => {
         asyncTryCatch(CourseLogic.insertCourse(req,res));
     } else if(path == "/api/course/fetchall" && req.method==="GET"){
         asyncTryCatch(CourseLogic.fetch_all(req,res));
-    }else if(path == "/api/course/moreCredit" && req.method==="POST"){
+    }else if(path == "/api/course/moreCredit" && req.method==="GET"){
         if (querry.credit ) {
             asyncTryCatch(CourseLogic.moreCredit(req,res,querry.credit));
         } else {
@@ -73,8 +73,8 @@ const server = http.createServer(async (req, res) => {
     } else if (path == "/api/faculty/experienced-cs-r" && req.method === "GET") {
         asyncTryCatch(FacultyLogic.findExperiencedCSFacultyStartingWithR(req, res));
     } else if (path == "/api/faculty/update" && req.method === "PUT") {
-        if (querry.facultyid) {
-            asyncTryCatch(FacultyLogic.updateContactDetails(req, res, querry.facultyid));
+        if (querry.facultyId) {
+            asyncTryCatch(FacultyLogic.updateContactDetails(req, res, querry.facultyId));
         } else {
             res.statusCode = 400;
             res.end(JSON.stringify({
@@ -103,12 +103,13 @@ const server = http.createServer(async (req, res) => {
         } else {
             return
         }
-    } else if (path == "/api/Library/deleteCollection" && req.method === "DELETE") {
-        if (querry.collectionName) {
-            asyncTryCatch(LibraryLogic.DeleteCollection(req, res,querry.collectionName));
-        } else {
-            return
-        }
+    } else if (path == "/api/Library/delete" && req.method === "DELETE") {
+            asyncTryCatch(LibraryLogic.DeleteCollection(req, res));
+
+    }else if (path == "/api/Library/issuebook" && req.method === "GET") {
+        asyncTryCatch(LibraryLogic.issuebook(req, res));
+    }else if (path == "/api/Library/drop" && req.method === "DELETE") {
+        asyncTryCatch(LibraryLogic.drop(req, res));
     }
 });
 

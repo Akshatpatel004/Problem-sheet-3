@@ -1,14 +1,106 @@
 //student
 ● Find all students who scored more than 75 marks. 
-    /api/students/moremarks?mark=75
+    localhost:3000/api/students/moremarks?mark=75
+    method = GET
 
 ● Find students enrolled in the "BCA" course and show only their name and marks. 
-    /api/students/findcourse?course=BCA
+    localhost:3000/api/students/findcourse?course=BCA
+    method = GET
 
 ● Find all students
-    /api/students/all
+    localhost:3000/api/students/all
+    method = GET
 
 ● Update a student’s marks or course enrolment. (updated student mark =20 whose course is BCA)
-    /api/students/updateMark?course=BCA&mark=20
+    localhost:3000/api/students/updateMark?course=BCA&mark=20
+    method = PUT
+
+● Insert student data
+    localhost:3000/api/students/insert
+    method = POST
+
 
 //course
+● Insert student data
+    localhost:3000/api/course/insert
+    method = POST
+
+● Find all courses that have more than 4 credits. 
+    localhost:3000/api/course/moreCredit?credit=4
+    method = GET
+
+● Find all active courses and sort them by duration (ascending). 
+    localhost:3000/api/course/duration_sort
+    method = GET  
+
+● Find all courses 
+    localhost:3000/api/course/fetchall
+    method = GET 
+
+● Rename courses to courseList. 
+    localhost:3000/api/course/rename_collection?newname=courseList&oldname=courses
+    method = PUT 
+
+
+//faculty
+● Insert Faculty data
+    localhost:3000/api/faculty/insert
+    method = POST
+
+● Find all Faculty 
+    localhost:3000/api/faculty/all
+    method = GET 
+
+● Find faculty members who have more than 5 years of experience and belong to the 
+“Computer Science” department.
+● Find all faculty whose names start with the letter “R” (use regex). 
+    localhost:3000/api/faculty/experienced-cs-r
+    method = GET 
+
+● Update a faculty member’s contact details. 
+    localhost:3000/api/faculty/update?facultyId=F004
+    method = GET
+
+
+//department
+● Insert department data
+    localhost:3000/api/department/insert
+    method = POST
+
+● Find all department 
+    localhost:3000/api/department/all
+    method = GET 
+
+● Find departments where totalFaculty is less than 10 or located in "Block A". 
+    localhost:3000/api/department/small-or-blocka
+    method = GET
+
+● Find all departments and show only deptName and coursesOffered. 
+    localhost:3000/api/department/name-courses
+    method = GET
+
+
+//library
+● Insert library data
+    localhost:3000/api/Library/insert
+    method = POST
+
+● Find all library 
+    localhost:3000/api/Library/all
+    method = GET 
+
+● Find all available books in the "Computer Science" category. 
+    localhost:3000/api/Library/FindCategory?category=Computer Science
+    method = GET 
+
+● Find the latest 3 books issued (sorted by issueDate descending). 
+    localhost:3000/api/Library/issuebook
+    method = GET
+
+● Delete inactive library members or outdated course records. 
+    localhost:3000/api/Library/delete
+    method = Delete
+
+● Drop (delete) library collection. 
+    localhost:3000/api/Library/drop
+    method = Delete
