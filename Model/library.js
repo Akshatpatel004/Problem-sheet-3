@@ -1,38 +1,32 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
-
-const libraryschema = new Schema({
-    bookId:{
-        type: String,
-        unique:true,
-        required: true
-    },
-    title:{
-        type : String,
-        required: true
-    },
-    author:{
-        type : String,
-        required: true
-    },
-    category:{
-        type : String,
-        unique:true,
-        required: true,
-    },
-    isAvailable:{
-        type : Boolean,
-        required: true
-    },
-    issuedTo:{
-        type: String,
-        required: true
-    },
-    issueDate:{
-        type: Date,
-        required: true
-    }
-
-},{versionKey:false});
-
-export default mongoose.model('Library',libraryschema);
+const librarySchema = new mongoose.Schema({
+  bookId: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  title: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: String,
+    required: true
+  },
+  category: {
+    type: String,
+    required: true
+  },
+  isAvailable: {
+    type: Boolean
+  },
+  issuedTo: {
+    type: String,
+    default: null
+  },
+  issueDate: {
+    type: Date,
+    default: null
+  }
+});
+export default mongoose.model('Library',librarySchema);
